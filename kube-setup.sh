@@ -26,7 +26,7 @@ dnf install VirtualBox-5.2 -y
 echo installing kubectl
 dnf install kubernetes-client -y
 echo downloading minikube, check version
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.35.0/minikube-linux-amd64
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
 chmod +x minikube
 cp minikube /usr/local/bin
