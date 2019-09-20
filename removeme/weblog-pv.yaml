@@ -1,13 +1,15 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: pv-volume
+  name: weblog-pv-volume
   labels:
-      type: local
+    type: local
 spec:
+  storageClassName: manual
   capacity:
-    storage: 2Gi
+    storage: 100Mi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/mydata"
+    path: /tmp/weblog
+

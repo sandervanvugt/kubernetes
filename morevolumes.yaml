@@ -12,7 +12,6 @@ spec:
     volumeMounts:
       - mountPath: /centos
         name: test
-    name: centos
   - name: centos
     image: centos:7
     command:
@@ -21,7 +20,6 @@ spec:
     volumeMounts:
       - mountPath: /centos2
         name: test
-    name: centos2
   volumes: 
     - name: test
       emptyDir: {}
