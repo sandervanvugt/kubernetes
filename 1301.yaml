@@ -1,0 +1,30 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: ckad-ns1
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-a
+  namespace: ckad-ns1
+spec:
+  containers:
+    - image: httpd
+      name: httpserver
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-b
+  namespace: ckad-ns1
+spec:
+  containers:
+    - image: nginx
+      name: nginxserver
+    - image: rsyslog
+      name: rsyslogserver
