@@ -1,0 +1,17 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{},"name":"azuredisk-custom-storageclass"},"parameters":{"kind":"Managed","storageaccounttype":"Standard_LRS"},"provisioner":"kubernetes.io/azure-disk","reclaimPolicy":"Retain","volumeBindingMode":"WaitForFirstConsumer"}
+  creationTimestamp: "2020-02-26T11:37:56Z"
+  name: azuredisk-custom-storageclass
+  resourceVersion: "932514"
+  selfLink: /apis/storage.k8s.io/v1/storageclasses/azuredisk-custom-storageclass
+  uid: 54d93d90-8f20-430c-b5a0-46ecd31c076f
+parameters:
+  kind: Managed
+  storageaccounttype: Standard_LRS
+provisioner: kubernetes.io/azure-disk
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
