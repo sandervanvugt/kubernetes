@@ -1,0 +1,2 @@
+https://github.com/kubernetes/examples/blob/master/volumes/glusterfs/README.md#create-a-pod
+https://docs.gluster.org/en/latest/Quick-Start-Guide/Quickstart/
