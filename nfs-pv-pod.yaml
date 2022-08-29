@@ -9,7 +9,7 @@ spec:
         claimName: nfs-pv-claim
   containers:
     - name: nfs-client1
-      image: centos:latest
+      image: centos:7
       command:
         - sleep
         - "3600"
@@ -17,7 +17,7 @@ spec:
         - mountPath: "/nfsshare"
           name: nfs-pv
     - name: nfs-client2
-      image: centos:latest
+      image: centos:7
       command:
         - sleep
         - "3600"
