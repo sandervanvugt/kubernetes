@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: oldnginx
+    type: canary
+  name: oldnginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: oldnginx
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: oldnginx
+        type: canary
+    spec:
+      containers:
+      - image: nginx:1.15
+        name: nginx
+        resources: {}
+        volumeMounts:
+        - name: configfile
+          mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: configfile
+        configMap:
+          name: oldnginx
+status: {}
