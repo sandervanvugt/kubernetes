@@ -1,0 +1,8 @@
+apiVersion: "stable.example.com/v1"
+kind: BackUp
+metadata:
+  name: mybackup
+spec: 
+  backupType: full
+  image: linux-backup-image
+  replicas: 5
