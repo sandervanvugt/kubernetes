@@ -1,13 +1,10 @@
-FROM centos
+FROM alpine
 MAINTAINER Sander <mail@sandervanvugt.nl>
 
-# Add repo file
+# Add a file
 ADD ./sander.repo /etc/yum.repos.d/
 
 # Install cool software
-RUN yum --assumeyes update && \
-yum --assumeyes install bash nmap iproute && \
-yum clean all
+RUN apk add procps
 
-ENTRYPOINT ["/usr/bin/nmap"]
-CMD ["-sn", "172.17.0.0/24"] 
+CMD ["ps", "aux"] 
