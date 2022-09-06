@@ -1,18 +1,18 @@
 apiVersion: v1
 kind: Pod
 metadata: 
-  name: morevol2
+  name: morevol
 spec:
   containers:
-  - name: centos
+  - name: centos1
     image: centos:7
     command:
       - sleep
       - "3600" 
     volumeMounts:
-      - mountPath: /centos
+      - mountPath: /centos1
         name: test
-  - name: centos
+  - name: centos2
     image: centos:7
     command:
       - sleep
