@@ -17,9 +17,9 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ####
 echo the script is now ready
-echo manually run minikube start --vm-driver=docker --cni=calico to start minikube
+echo manually run minikube start --vm-driver=docker to start minikube
 
 sudo usermod -aG docker $USER
 newgrp docker
 
-minikube start --vm-driver=docker --cni=calico
+minikube start --vm-driver=docker 
