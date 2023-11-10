@@ -1,0 +1,16 @@
+RECORDED COURSES
+Hands-on Kubernetes: https://learning.oreilly.com/videos/hands-on-kubernetes/9780136702887/
+Getting Started with Kubernetes 3rd Edition: https://learning.oreilly.com/videos/getting-started-with/9780138057626/
+Kubernetes and Cloud Native Associate: https://learning.oreilly.com/videos/kubernetes-and-cloud/9780137993413/
+CKAD 3rd/ edition: https://learning.oreilly.com/videos/certified-kubernetes-application/9780138086558/
+CKA 3rd edition: https://learning.oreilly.com/videos/certified-kubernetes-administrator/9780138103804/
+Automating Kubernetes with GitOps: https://learning.oreilly.com/videos/automating-kubernetes-with/9780138230258/
+Kubernetes from Basics to Guru: https://learning.oreilly.com/videos/automating-kubernetes-with/9780138230258/
+
+HANDS ON LABS
+CKAD Labs: https://learning.oreilly.com/playlists/ea6ea0fc-d8e2-422c-94dd-a0a8f608d224/
+
+LIVE COURSES
+CKAD crash course: https://learning.oreilly.com/live-events/certified-kubernetes-application-developer-ckad-crash-course/0636920315803/
+CKA crash course: https://learning.oreilly.com/live-events/certified-kubernetes-administrator-cka-crash-course/0636920315766/
+Building Microservices with Containers, Kubernetes and Istio: https://learning.oreilly.com/live-events/building-microservices-with-containers-kubernetes-and-istio/0636920408468/ 
