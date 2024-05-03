@@ -1,0 +1,6 @@
+1.	Running Minikube: https://learning.oreilly.com/videos/kubernetes-step-by-step/9780135313022/9780135313022-KSS1_01_03_05/
+2.	Running Apps from a YAML File: https://learning.oreilly.com/videos/kubernetes-step-by-step/9780135313022/9780135313022-KSS1_01_04_05/
+3.	Accessing K8s Applications: https://learning.oreilly.com/videos/kubernetes-step-by-step/9780135313022/9780135313022-KSS1_01_05_05/
+4.	Configuring Storage: https://learning.oreilly.com/videos/kubernetes-step-by-step/9780135313022/9780135313022-KSS1_01_06_05/
+5.	Using ConfigMap: https://learning.oreilly.com/videos/kubernetes-step-by-step/9780135313022/9780135313022-KSS1_01_06_05/
+6.	Managing Microservices: https://learning.oreilly.com/videos/kubernetes-step-by-step/9780135313022/9780135313022-KSS1_01_06_05
