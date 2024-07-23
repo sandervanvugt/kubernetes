@@ -1,0 +1,164 @@
+    1  sudo apt install ubuntu-desktop
+    2  sudo systemctl get-default
+    3  sudo systemctl disable pd-mapper.service 
+    4  sudo systemctl disable systemd-networkd-wait-online
+    5  sudo apt update -y
+    6  ip a
+    7  ping nu.nl
+    8  sudo apt update
+    9  sudo apt upgrade
+   10  sudo dpkg --configure -a
+   11  sudo reboot
+   12  hostnamectl hostname kube4h.example.com
+   13  exit
+   14  minikube start -h | less
+   15  minikube start
+   16  history
+   17  kubectl get all
+   18  sudo df -h
+   19  vgs
+   20  sudo vgs
+   21  sudo lvs
+   22  sudo lvextend -l +100%FREE -r /dev/ubuntu-vg/ubuntu-lv
+   23  df -hj
+   24  df -h
+   25  minikube stop
+   26  minikube delete
+   27  minikube start
+   28  minikube status
+   29  kubectl get all
+   30  ./countdown 1
+   31  minikube dashboard
+   32  history
+   33  kubectl get all
+   34  kubectl create deploy apptwo --image=nginx --replicas=2
+   35  kubectl get all
+   36  history
+   37  kubectl create deploy appthree --image=nginx:1.17
+   38  kubectl get all
+   39  kubectl get all --show-labels
+   40  kubectl get all --selector app=appthree
+   41  kubectl set -h | less
+   42  kubectl set image -h | less
+   43  #kubectl set image deployments,rc nginx=nginx:1.9.1 --all
+   44  kubectl set image deploy appthree nginx=nginx:latest
+   45  kubectl get all --selector app=appthree
+   46  kubectl create -h | less
+   47  kubectl create deployment -h | less
+   48  kubectl create deployment my-dep --image=busybox
+   49  kubectl get all --selector app=my-dep
+   50  kubectl completion -h | less
+   51  source <(kubectl completion bash)
+   52  kubectl create deployment -h | less
+   53  kubectl get pods
+   54  kubectl get pods appone-7bd4fcc4f-hkrwd -o yaml | less
+   55  kubectl explain pods.spec | less
+   56  history
+   57  kubectl get all
+   58  kubectl delete pods appone-7bd4fcc4f-hkrwd 
+   59  kubectl get all
+   60  kubectl get deploy appone | less
+   61  kubectl get deploy appone -o yaml | less
+   62  kubectl api-resources | less
+   63  kubectl get nodes
+   64  kubectl get pods -o wide
+   65  kubectl run -h | less
+   66  kubectl run hazelcast --image=hazelcast/hazelcast --env="DNS_DOMAIN=cluster" --env="POD_NAMESPACE=default"
+   67  kubectl get pods
+   68  kubectl delete pod hazelcast 
+   69  kubectl get pods
+   70  history
+   71  kubectl explain deploy.spec | less
+   72  kubectl get deploy appone -o yaml | less
+   73  kubectl describe deploy appone | less
+   74  kubectl get pods
+   75  kubectl describe pods my-dep-65f5fcc5dd-7xhwj 
+   76  kubectl get pods my-dep-65f5fcc5dd-7xhwj -o yaml | grep -i restartp
+   77  kubectl get all
+   78  kubectl delete deploy my-dep
+   79  kubectl create deploy -h | less
+   80  kubectl create deployment my-dep --image=busybox -- sleep infinity
+   81  kubectl get all
+   82  history
+   83  kubectl get all
+   84  kubectl delete replicasets.apps appone-7bd4fcc4f 
+   85  kubectl get all
+   86  kubectl api-resources | less
+   87  history
+   88  kubectl create deploy mynginx --image=nginx --dry-run=client -o yaml
+   89  kubectl create deploy mynginx --image=nginx --dry-run=client -o yaml > mynginx.yaml
+   90  vim mynginx.yaml 
+   91  kubectl apply -f mynginx.yaml 
+   92  vim mynginx.yaml 
+   93  kubectl apply -f mynginx.yaml 
+   94  kubectl get ns
+   95  kubectl get pods -A
+   96  kubectl create ns secret
+   97  kubectl run secured --image=nginx -n secret
+   98  kubectl get secured
+   99  kubectl get pods
+  100  kubectl get pods -n secret
+  101  kubectl create deploy mydb --image=mariadb --replicas=3
+  102  kubectl get pods --selector app=mariadb
+  103  kubectl get pods --selector app=mydb
+  104  kubectl describe pod mydb-7d6458794-4pbkt 
+  105  kubectl logs mydb-7d6458794-vjdqd 
+  106  kubectl set env -h | less
+  107  kubectl set env deploy mydb MARIADB_ROOT_PASSWORD=password
+  108  historyt
+  109  history
+  110  kubectl get pods --selector app=mydb
+  111  kubectl create deploy nginxsvc --image=nginx
+  112  kubectl scale deployment nginxsvc --replicas=3
+  113  kubectl get all --selector app=nginxsvc
+  114  kubectl expose deployment nginxsvc --port=80
+  115  kubectl get svc
+  116  kubectl describe svc nginxsvc
+  117  kubectl get endpoints
+  118  kubectl get pods -o wide
+  119  kubectl get svc
+  120  curl 10.111.41.0
+  121  minikube ssh
+  122  kubectl edit svc nginxsvc 
+  123  kubectl get svc
+  124  curl 192.168.49.2:32272
+  125  history
+  126  minikube ip
+  127  kubectl explain pod.spec.volumes | less
+  128  vim morevolumes.yaml 
+  129  kubectl apply -f morevolumes.yaml 
+  130  kubectl get pods
+  131  kubectl describe pod morevol 
+  132  kubectl exec -it morevol -c centos1 -- touch /centos1/test
+  133  kubectl exec -it morevol -c centos2 -- ls -l /centos2
+  134  kubectl exec -it morevol -c centos2 -- date
+  135  kubectl get pvc,pv,storageclass
+  136  cat pvc.yaml 
+  137  kubectl apply -f pvc.yaml
+  138  kubectl get pvc,pv,storageclass
+  139  vim pv-pod.yaml 
+  140  kubectl apply -f pv-pod.yaml 
+  141  cat pv-pod.yaml 
+  142  kubectl exec -it pv-pod -- touch /usr/share/nginx/html/testfile
+  143  kubectl describe pv pvc-d8a09f8b-d181-4936-84f4-75f5ef48e0e2 
+  144  minikube ssh
+  145  kubectl describe pod.spec.volumes | less
+  146  kubectl describe pods.spec.volumes | less
+  147  kubectl explain pods.spec.volumes | less
+  148  kubectl create deploy mynewdb --image=mariadb --replicas=3
+  149  kubectl get all --selector app=mynewdb
+  150  kubectl create cm mynewdbvars --from-literal=MARIADB_ROOT_PASSWORD=password
+  151  kubectl describe cm mynewdbvars 
+  152  kubectl set env --from=configmap/mynewdbvars deploy/mynewdb
+  153  kubectl get all --selector app=mynewdb
+  154  kubectl get deploy mynewdb -o yaml | less
+  155  history
+  156  minikube addons list
+  157  minikube addons enable ingress
+  158  get get ns
+  159  kubectl get ns
+  160  kubectl get all -n ingress-nginx 
+  161  kubectl create ing nginxsvc --rule="myapp.info/=nginxsvc:80"
+  162  sudo vim /etc/hosts
+  163  curl myapp.info
+  164  history > 23Jul24.txt
