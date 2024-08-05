@@ -74,6 +74,11 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/miniku
 sudo chmod +x minikube
 sudo mv minikube /usr/local/bin
 
+# adds current user to libvirt group
+echo adding `id -un` to the group 'libvirt'
+sudo usermod -aG libvirt `id -un`
+
+
 # start minikube
 minikube start --memory 4096 --vm-driver=kvm2
 
