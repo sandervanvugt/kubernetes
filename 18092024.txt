@@ -1,0 +1,138 @@
+    1  sudo apt install ubuntu-desktop
+    2  sudo systemctl get-default
+    3  sudo systemctl disable pd-mapper.service 
+    4  sudo systemctl disable systemd-networkd-wait-online
+    5  sudo apt update -y
+    6  ip a
+    7  ping nu.nl
+    8  sudo apt update
+    9  sudo apt upgrade
+   10  sudo dpkg --configure -a
+   11  sudo reboot
+   12  sudo -i
+   13  sudo poweroff
+   14  minikube start
+   15  kubectl get all
+   16  ./countdown 15
+   17  minikube dashboard
+   18  kubectl create deploy apptwo --image=nginx --replicas=3
+   19  history
+   20  kubectl get all
+   21  kubectl --help | less
+   22  kubectl create --help | less
+   23  kubectl create deploy --help | less
+   24  history
+   25  kubectl completion --help | less
+   26  source <(kubectl completion bash)
+   27  kubectl get all
+   28  kubectl api-resources | less
+   29  history
+   30  kubectl explain pods
+   31  kubectl explain pods.spec | less
+   32  history
+   33  kubectl get all
+   34  kubectl get all --selector app=apptwo
+   35  kubectl delete pod apptwo-7788f9cd58-bmsv8 
+   36  kubectl get all --selector app=apptwo
+   37  kubectl run -h | less
+   38  kubectl run nginx --image=nginx
+   39  kubectl get all
+   40  kubectl delete pod nginx
+   41  kubectl get all
+   42  history
+   43  kubectl get all
+   44  kubectl get pods
+   45  kubectl get all --show-labels
+   46  kubectl get all --selector app=apptwo
+   47  kubectl create deploy blah
+   48  history
+   49  kubectl get pods
+   50  kubectl describe pod apptwo-7788f9cd58-cm7g9 | less
+   51  kubectl describe deployments.apps apptwo 
+   52  history
+   53  kubectl get pods apptwo-7788f9cd58-vq76q -o yaml | less
+   54  kubectl create deploy mydeploy --image=nginx --replicas=3 --dry-run=client -o yaml
+   55  kubectl create deploy mydeploy --image=nginx --replicas=3 --dry-run=client -o yaml > mydeploy.yaml
+   56  kubectl apply -f mydeploy.yaml 
+   57  vim mydeploy.yaml 
+   58  kubectl apply -f mydeploy.yaml 
+   59  kubectl get deploy --show-labels
+   60  history
+   61  vim mydeploy.yaml 
+   62  kubectl get deploy
+   63  kubectl create -f mydeploy.yaml 
+   64  kubectl apply -f mydeploy.yaml 
+   65  kubectl delete -f mydeploy.yaml 
+   66  kubectl get ns
+   67  kubectl get pods
+   68  kubectl get pods -A
+   69  kubectl create ns secret
+   70  kubectl run secretpod --image=nginx -n secret
+   71  kubectl get pods
+   72  kubectl get pods -n secret
+   73  kubectl create deploy testdb --image=mariadb --replicas=2
+   74  kubectl get all --selector app=testdb
+   75  kubectl describe pod testdb-5dcbd55d65-q74p5 
+   76  kubectl logs testdb-5dcbd55d65-mhndf 
+   77  kubectl get all --selector app=testdb
+   78  kubectl set env -h | less
+   79  kubectl set env deploy/testdb MARIADB_ROOT_PASSWORD=password
+   80  kubectl get all --selector app=testdb
+   81  history
+   82  kubectl exec -it testdb-96f56fbdc-hvst5 -- sh
+   83  kubectl get deploy --show-labels
+   84  kubectl get pods -A -o wide
+   85  kubectl create deploy nginxsvc --image=nginx
+   86  kubectl get all --selector app=nginxsvc
+   87  kubectl scale deployment nginxsvc --replicas=3
+   88  kubectl get all --selector app=nginxsvc
+   89  kubectl expose deploy nginxsvc --port=80
+   90  kubectl get all --selector app=nginxsvc
+   91  kubectl describe svc nginxsvc 
+   92  kubectl get pods --selector app=nginxsvc -o wide
+   93  kubectl get endpoints
+   94  kubectl get svc
+   95  curl 10.96.24.105
+   96  minikube ssh
+   97  kubectl edit svc nginxsvc 
+   98  kubectl get svc
+   99  minikube ip
+  100  curl 192.168.49.2:30982
+  101  history
+  102  ls
+  103  vim morevolumes.yaml 
+  104  kubectl explain pod.spec.volumes | less
+  105  vim morevolumes.yaml 
+  106  kubectl apply -f morevolumes.yaml 
+  107  kubectl describe pod morevol 
+  108  kubectl get pods
+  109  kubectl exec -it morevol -c centos1 -- touch /centos1/hello
+  110  kubectl exec -it morevol -c centos2 -- ls -l /centos2
+  111  kubectl get pvc,pv,storageclass
+  112  vim pvc.yaml 
+  113  kubectl apply -f pvc.yaml
+  114  kubectl get pvc,pv,storageclass
+  115  vim pv-pod.yaml 
+  116  kubectl apply -f pv-pod.yaml 
+  117  kubectl describe pod pv-pod 
+  118  kubectl exec -it pv-pod -- touch /usr/share/nginx/html/mymooiefile
+  119  kubectl get pv
+  120  kubectl describe pv pvc-1da6d769-40d1-45c8-9f0e-e3c4675ef4c9 
+  121  minikube ssh
+  122  history
+  123  kubectl create deploy mynewdb --image=mariadb --replicas=3
+  124  kubectl get pods --selector app=mynewdb
+  125  kubectl create cm mynewdbvars --from-literal=MARIADB_ROOT_PASSWORD=password
+  126  kubectl describe cm mynewdbvars 
+  127  kubectl set env --from=configmap/mynewdbvars deploy/mynewdb
+  128  kubectl get pods --selector app=mynewdb
+  129  kubectl get pods mynewdb-7dcc94f8d-bpkb7 -o yaml | less
+  130  minikube addons list
+  131  minikube addons enable ingress
+  132  bg
+  133  kubectl create ing -h | less
+  134  kubectl create ing 
+  135  kubectl create ing nginxsvc --rule="myapp.info/=nginxsvc:80"
+  136  sudo vim /etc/hosts
+  137  curl myapp.info
+  138  history > /tmp/18092024.txt
