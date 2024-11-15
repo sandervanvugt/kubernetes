@@ -12,7 +12,7 @@ HANDS ON LABS
 CKAD Labs: https://learning.oreilly.com/playlists/ea6ea0fc-d8e2-422c-94dd-a0a8f608d224/
 
 LIVE COURSES
-CKAD crash course: https://learning.oreilly.com/live-events/certified-kubernetes-application-developer-ckad-crash-course/0636920315803/
-CKA crash course: https://learning.oreilly.com/live-events/certified-kubernetes-administrator-cka-crash-course/0636920315766/
+CKAD in 8 hours: https://learning.oreilly.com/live-events/ckad-in-8-hours-certified-kubernetes-application-developer-crash-course/0642572001348/
+CKA in 6 hours: https://learning.oreilly.com/live-events/ckad-in-8-hours-certified-kubernetes-application-developer-crash-course/0642572001348/
 Integrating Kubernetes Applications: https://learning.oreilly.com/live-events/integrating-kubernetes-applications/0790145087226/0790145087218/
 Building Microservices with Containers, Kubernetes and Istio: https://learning.oreilly.com/live-events/building-microservices-with-containers-kubernetes-and-istio/0636920408468/ 
