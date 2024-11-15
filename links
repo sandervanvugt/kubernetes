@@ -1,0 +1,8 @@
+lab1 - installing Minikube: https://learning.oreilly.com/videos/kubernetes-step-by-step/9780135313022/9780135313022-KSS1_01_03_05/
+lab2: - running an app from a YAML file: https://learning.oreilly.com/videos/kubernetes-step-by-step/9780135313022/9780135313022-KSS1_01_04_05/
+lab3 - providing access to applications: https://learning.oreilly.com/videos/kubernetes-step-by-step/9780135313022/9780135313022-KSS1_01_05_05/
+lab 4 - using auto-provisioned storage: https://learning.oreilly.com/videos/kubernetes-step-by-step/9780135313022/9780135313022-KSS1_01_06_05/
+lab 5 - providing configuration to an application: https://learning.oreilly.com/videos/kubernetes-step-by-step/9780135313022/9780135313022-KSS1_01_07_05/
+lab 6- using microservices: https://learning.oreilly.com/videos/kubernetes-step-by-step/9780135313022/9780135313022-KSS1_01_08_05/
+
+Additional information: using Kustomize: https://learning.oreilly.com/videos/kubernetes-step-by-step/9780135313022/9780135313022-KSS1_01_08_04/
