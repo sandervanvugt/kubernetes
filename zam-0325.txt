@@ -1,0 +1,249 @@
+    1  sudo apt update
+    2  sudo apt install docker.io
+    3  cat /etc/os-release 
+    4  sudo apt install docker.io
+    5  systemctl status dockerd
+    6  systemctl status docker
+    7  docker run -d nginx
+    8  id
+    9  usermod -aG docker student
+   10  sudo usermod -aG docker student
+   11  id
+   12  sudo reboot
+   13  id
+   14  docker run -it nginx
+   15  docker ps
+   16  docker ps -a
+   17  docker start -d competent_dijkstra 
+   18  docker start competent_dijkstra 
+   19  docker ps
+   20  docker exec -it competent_dijkstra sh
+   21  docker ps
+   22  docker run -it busybox 
+   23  docker ps
+   24  exit
+   25  docker ps
+   26  docker ps -a
+   27  docker run -it busybox 
+   28  docker ps
+   29  history
+   30  docker ps
+   31  docker inspect c63
+   32  docker inspect c63 | less
+   33  docker images
+   34  docker inspect cfc | less
+   35  docker run -d mariadb
+   36  docker ps
+   37  docker ps -a
+   38  docker logs ecstatic_chebyshev 
+   39  history
+   40  docker ps
+   41  docker logs ecstatic_chebyshev 
+   42  docker run --help | less
+   43  docker run mariadb -m 128M -e MARIADB_ROOT_PASSWORD=password -d
+   44  docker run -m 128M -e MARIADB_ROOT_PASSWORD=password -d mariadb
+   45  docker ps
+   46  docker -a
+   47  docker ps -a
+   48  docker logs admiring_villani 
+   49  docker run -m 1G -e MARIADB_ROOT_PASSWORD=password -d mariadb
+   50  docker ps
+   51  history
+   52  docker images
+   53  docker ps -a
+   54  docker rm 41a
+   55  docker ps -a
+   56  docker rm b641
+   57  sudo find / -name "269*" 2>/dev/null
+   58  docker ps -a
+   59  sudo find / -name "2694139*" 2>/dev/null
+   60  ps faux | less
+   61  docker ps
+   62  curl localhost:80
+   63  sudo apt install curl
+   64  curl localhost:80
+   65  docker run --help | less
+   66  docker run -d -p 8080:80 nginx 
+   67  docker ps
+   68  curl localhost:8080
+   69  history
+   70  docker ps
+   71  docker stop 26941
+   72  docker rm 26941
+   73  lsblk
+   74  sudo mount /dev/sda1 /mnt
+   75  cd /mnt
+   76  ls
+   77  cd
+   78  sudo umount /mnt
+   79  ls /mnt
+   80  mkdir mariadb
+   81  docker run --rm -d --name=mariadb -v /home/student/mariadb:/var/lib/mysql -e MARIADB_ROOT_PASSWORD mariadb
+   82  docker run --rm -d --name=mariadb -v /home/student/mariadb:/var/lib/mysql -e MARIADB_ROOT_PASSWORD=password mariadb
+   83  docker ps
+   84  ls mariadb/
+   85  docker stop mariadb
+   86  ls mariadb/
+   87  docker ps -a
+   88  history
+   89  docker run -it -v /:/mnt busybox
+   90  got clone https://github.com/sandervanvugt/containers
+   91  git clone https://github.com/sandervanvugt/containers
+   92  cd containers/
+   93  ls
+   94  cd dockerfile/
+   95  ls
+   96  vim Dockerfile 
+   97  docker build -t nmap .
+   98  docker images
+   99  docker run nmap
+  100  vim Dockerfile 
+  101  docker run -it nginx bash
+  102  docker run -it nmap sh
+  103  vim Dockerfile 
+  104  docker build -t nmap .
+  105  docker run -it nmap sh
+  106  docker images
+  107  cd ..
+  108  cd alpmap/
+  109  ls
+  110  vim Dockerfile 
+  111  docker build -t alpmap .
+  112  docker images
+  113  history
+  114  sudo poweroff
+  115  ssh student@192.168.29.148
+  116  git clone https://github.com/sandervanvugt/containers
+  117  cd containers/
+  118  ./countdown 7
+  119  vim countdown 
+  120  sudo apt install -y vim
+  121  vim countdown 
+  122  ./countdown 6
+  123  ./countdown 6 lab
+  124  ./countdown 10 lab
+  125  ./countdown 30 lab-and-break
+  126  ./countdown 12 lab
+  127  ./countdown 15 lab
+  128  minikube start
+  129  sudo systemctl restart docker
+  130  systemctl daemon-reload
+  131  systemctl status docker
+  132  minikube start
+  133  kubectl get all
+  134  ls
+  135  minikube dashboard
+  136  bg
+  137  kubectl get all
+  138  kubectl create deploy zam02 --image=nginx --replicas=3
+  139  kubectl get all
+  140  history
+  141  vim install-minikube-on-ubu.txt
+  142  cat install-minikube-on-ubu.txt 
+  143  kubectl --help
+  144  kubectl --help | less
+  145  kubectl create --help | less
+  146  kubectl create deploy --help | less
+  147  kubectl completion --help | less
+  148  kubectl get pods
+  149  kubectl get pods zam01-5c6dc44d4d-4vvj8 -o yaml | less
+  150  kubectl run -h | less
+  151  kubectl run nginx --image=nginx
+  152  kubectl get all
+  153  kubectl delete pod zam01-5c6dc44d4d-4vvj8 
+  154  kubectl get all
+  155  kubectl delete pod nginx
+  156  kubectl get all
+  157  kubectl delete deploy zam01
+  158  kubectl get all
+  159  history
+  160  kubectl create deploy zam03 --image=nginx --replicas=3 --dry-run=client -o yaml
+  161  kubectl create deploy zam03 --image=nginx --replicas=3 --dry-run=client -o yaml > zam03.yaml
+  162  vim zam03.yaml 
+  163  kubectl apply -f zam03.yaml
+  164  kubectl get all --selector app=zam03
+  165  kubectl explain Deploy | less
+  166  kubectl explain deploy | less
+  167  kubectl explain deploy.spec | less
+  168  vim zam03.yaml 
+  169  kubectl apply -f zam03.yaml 
+  170  cat zam03.yaml 
+  171  history
+  172  kubectl create deploy mydb --image=mariadb
+  173  kubectl get all --selector app=mydb
+  174  kubectl describe pod mydb-7c9ddb78dc-hl2lt | less
+  175  kubectl get all --selector app=mydb
+  176  kubectl delete deploy mydb
+  177  kubectl create deploy mydb --image=mariadb
+  178  kubectl get all --selector app=mydb
+  179  watch kubectl get all --selector app=mydb
+  180  sudo reboot
+  181  git clone https://github.com/sandervanvugt/kubernetes
+  182  cd kubernetes/
+  183  ls
+  184  ./minikube-docker-setup.sh 
+  185  minikube start
+  186  sudo reboot
+  187  minikube start
+  188  kubectl create deploy twodb --image=docker.io/library/mariadb
+  189  kubectl get all --selector app=twodb
+  190  kubectl describe  pod twodb-85b4fc4c7b-lz7rd 
+  191  kubectl get all --selector app=twodb
+  192  kubectl describe pod twodb-85b4fc4c7b-lz7rd 
+  193  ping nu.nl
+  194  kubectl get all
+  195  kubectl describe pod mydb-7c9ddb78dc-94jjr 
+  196  kubectl get pods
+  197  kubectl create deploy newdb --image=mariadb
+  198  kubectl delete deploy mydb twodb 
+  199  kubectl get pods
+  200  kubectl describe pod newdb-8567f7c987-lwwbw 
+  201  kubectl get pods
+  202  kubectl describe pod newdb-8567f7c987-lwwbw 
+  203  kubectl logs newdb-8567f7c987-lwwbw 
+  204  history
+  205  kubectl get all
+  206  kubectl create deploy nginxsvc --image=nginx
+  207  kubectl get all --selector app=nginxsvc
+  208  kubectl scale deploy nginxsvc --replicas=3
+  209  kubectl get all --selector app=nginxsvc -o wide
+  210  kubectl expose deploy nginxsvc --port=80
+  211  kubectl describe svc nginxsvc 
+  212  curl 10.98.46.124
+  213  kubectl get svc
+  214  kubectl get endpoints
+  215  minikube ssh
+  216  kubectl edit svc nginxsvc
+  217  kubectl get svc
+  218  minikube ip
+  219  ip a
+  220  minikube ssh
+  221  kubectl edit svc nginxsvc
+  222  kubectl get svc
+  223  curl 192.168.49.2:32445
+  224  history
+  225  kubectl edit svc nginxsvc 
+  226  kubectl get pods
+  227  kubectl create cm newdbvars --from-literal=MARIADB_ROOT_PASSWORD=password
+  228  kubectl describe cm configmap newdbvars
+  229  kubectl describe cm  newdbvars
+  230  kubectl get all --selector app=newdb
+  231  kubectl set env -h | less
+  232  kubectl set env --from=configmap/newdbvars deploy/newdb
+  233  kubectl get all --selector app=newdb
+  234  kubectl get deploy newdb -o yaml | less
+  235  kubectl create cm newdbvars --from-literal=MARIADB_ROOT_PASSWORD=password --dry-run=client -o yaml
+  236  kubectl get deploy newdb -o yaml | less
+  237  kubectl expose deploy newdb --type=NodePort --port=3306
+  238  kubectl get svc
+  239  minikube addons list
+  240  minikube addons enable ingress
+  241  kubectl get pods -n ingress-nginx 
+  242  kubectl create ing nginxsvc --rule="myapp.info/=nginxsvc:80"
+  243  sudo vim /etc/hosts
+  244  curl myapp.info
+  245  kubectl describe ing nginxsvc 
+  246  kubectl scale deploy nginxsvc --replicas=5
+  247  kubectl describe ing nginxsvc 
+  248  history
+  249  history > /tmp/zam-0325.txt
