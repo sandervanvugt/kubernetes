@@ -12,7 +12,15 @@ HANDS ON LABS
 CKAD Labs: https://learning.oreilly.com/playlists/ea6ea0fc-d8e2-422c-94dd-a0a8f608d224/
 
 LIVE COURSES
-CKAD in 8 hours: https://learning.oreilly.com/live-events/ckad-in-8-hours-certified-kubernetes-application-developer-crash-course/0642572001348/
-CKA in 6 hours: https://learning.oreilly.com/live-events/ckad-in-8-hours-certified-kubernetes-application-developer-crash-course/0642572001348/
+CKAD: https://learning.oreilly.com/live-events/certified-kubernetes-ckad-a-pearson-crash-course-with-sander-van-vugt/0642572223434/
+CKA: https://learning.oreilly.com/live-events/certified-kubernetes-cka-a-pearson-crash-course-with-sander-van-vugt/0642572223380/ 
 Integrating Kubernetes Applications: https://learning.oreilly.com/live-events/integrating-kubernetes-applications/0790145087226/0790145087218/
 Building Microservices with Containers, Kubernetes and Istio: https://learning.oreilly.com/live-events/building-microservices-with-containers-kubernetes-and-istio/0636920408468/ 
+
+30% DISCOUNT ON EXAMS
+# 30% discount on the CKAD exam
+Use the coupon code SANDER30 on checkout and book the exam here: https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/?source=aw&sv1=affiliate&sv_campaign_id=1937207&awc=85919_1754216222_69d0ea6b7bf719aae37f70bc14982b22
+
+# 30% discount on the CKA exam
+*       Use the coupon code SANDER30 to get 30% off the regular exam price. Book here to use it: https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/?source=aw&sv1=affiliate&sv_campaign_id=1937207&awc=85919_1754216444_cfaa875696447a4f19cca5558d7f96cf
+~                        
