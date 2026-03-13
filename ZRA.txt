@@ -1,0 +1,108 @@
+    1  minikube start
+    2  kubectl get all
+    3  kubectl create deploy zginx --image=nginx --replicas=3
+    4  kubectl get all
+    5  kubectl describe pod zginx-56d654f599-n7gjn 
+    6  kubectl get all
+    7  history
+    8  kubectl get all
+    9  minikube dashboard
+   10  kubectl get all
+   11  kubectl get ns
+   12  kubectl get all -n kubernetes-dashboard 
+   13  kubectl get pods -n kubernetes-dashboard 
+   14  kubectl get all
+   15  kubectl delete pod zginx-56d654f599-8pvbt 
+   16  kubectl get all
+   17  kubectl run zpod --image=nginx
+   18  kubectl get pods
+   19  kubectl delete pod zpod
+   20  kubectl get pods
+   21  kubectl get all -n kubernetes-dashboard 
+   22  curl 10.102.241.147
+   23  minikube ssh
+   24  kubectl edit service -n kubernetes-dashboard kubernetes-dashboard 
+   25  kubectl get all -n kubernetes-dashboard 
+   26  minikube ip
+   27  kubectl get deploy
+   28  kubectl set --help | less
+   29  kubectl set image --help | less
+   30  kubectl set image deploy z2ginx nginx=nginx:latest
+   31  kubectl get all
+   32  kubectl get pods
+   33  kubectl get pods zginx-56d654f599-747kk -o yaml  | less
+   34  kubectl describe pods zginx-56d654f599-747kk | less
+   35  kubectl get deploy
+   36  kubectl scale deployment z2ginx --replicas=2
+   37  kubectl get deploy
+   38  kubectl get all --selector app=z2ginx
+   39  kubectl get all
+   40  kubectl get all --selector app=z2ginx
+   41  kubectl delete pod z2ginx-66c68c5474-bq99f z2ginx-66c68c5474-t2lwg 
+   42  kubectl get all --selector app=z2ginx
+   43  kubectl scale deployment z2ginx --replicas=0
+   44  history
+   45  kubectl create deploy mynginx --dry-run=client -o yaml 
+   46  kubectl create deploy mynginx --image=nginx --replicas=3 --dry-run=client -o yaml 
+   47  kubectl create deploy mynginx --image=nginx --replicas=3 --dry-run=client -o yaml > mynginx.yaml
+   48  vim mynginx.yaml 
+   49  kubectl explain deploy.spec.template.spec | less
+   50  vim mynginx.yaml 
+   51  kubectl apply -f mynginx.yaml 
+   52  kubectl explain deploy.spec.template.spec | less
+   53  kubectl explain deploy.spec | less
+   54  vim mynginx.yaml 
+   55  kubectl apply -f mynginx.yaml 
+   56  vim mynginx.yaml 
+   57  kubectl apply -f mynginx.yaml 
+   58  kubectl get deploy
+   59  vim mynginx.yaml 
+   60  kubectl apply -f mynginx.yaml 
+   61  kubectl get all --selector app=mynginx
+   62  kubectl get all --selector app=mydb
+   63  kubectl get deploy zginx -o yaml | less
+   64  kubectl get deploy z3blh --image=nginx --dry-run=server -o yaml | less
+   65  kubectl create deploy z3blh --image=nginx --dry-run=server -o yaml | less
+   66  kubectl get all
+   67  kubectl describe pod mydb-7888d987c5-qwfhj | less
+   68  kubectl logs mydb-7888d987c5-qwfhj 
+   69  kubectl set env --help | less
+   70  #  kubectl set env deployment/registry STORAGE_DIR=/local
+   71  #kubectl set env deploy mydb MARIADB_ROOT_PASSWORD
+   72  kubectl get all --selector app=mydb
+   73  kubectl set env deploy mydb MARIADB_ROOT_PASSWORD
+   74  kubectl set env deploy/mydb MARIADB_ROOT_PASSWORD=password
+   75  kubectl get all --selector app=mydb
+   76  kubectl edit deploy mydb
+   77  kubectl create cm --help | less
+   78  kubectl create cm mydbvars MARIADB_ROOT_PASSWORD=password
+   79  kubectl create cm --help | less
+   80  kubectl create cm mydbvars --from-literal=MARIADB_ROOT_PASSWORD=password
+   81  kubectl get cm mydbvars -o yaml
+   82  kubectl set env --help | less
+   83  #kubectl set env --from=configmap/myconfigmap --prefix=MYSQL_ deployment/myapp
+   84  kubectl set env --from-configmap/mydbars deployment/mydb
+   85  kubectl set env --from=configmap/mydbars deployment/mydb
+   86  kubectl set env --from=configmap/mydbvars deployment/mydb
+   87  history
+   88  kubectl get deploy mydb -o yaml | less
+   89  history
+   90  sleep 61
+   91  minikube addons list
+   92  minikube addons enable ingress
+   93  kubectl get ns
+   94  kubectl get all -n ingress-nginx 
+   95  kubectl create ing mynginx --rule=myapp.info/=mynginx:80 
+   96  kubectl get svc
+   97  kubectl create ing mynginx --rule=myapp.info/=mynginx:80 
+   98  kubectl get all -n ingress-nginx 
+   99  kubectl get ing
+  100  sudo vim /etc/hosts
+  101  kubectl get all -n ingress-nginx 
+  102  kubectl create ing mynginx --rule=myapp.info/=mynginx:80 
+  103  kubectl get ing mynginx -o yaml
+  104  curl myapp.info
+  105  history
+  106  ip a
+  107  history
+  108  history > /tmp/ZRA.txt
