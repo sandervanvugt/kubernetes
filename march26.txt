@@ -1,0 +1,145 @@
+    1  arch
+    2  free -m
+    3  minikube start
+    4  free -m
+    5  minikube dashboard
+    6  history
+    7  kubectl get all
+    8  kubectl delete pod one-79d786554f-5qtnc 
+    9  kubectl get all
+   10  ls ~/.kube/
+   11  cat ~/.kube/config 
+   12  kubectl create deploy two --image=nginx --replicas=3
+   13  kubectl get all
+   14  history
+   15  cd
+   16  kubectl completion -h | less
+   17  kubectl create -h | less
+   18  kubectl create deployment -h | less
+   19  history
+   20  cd kubernetes/
+   21  ls
+   22  kubectl get pods
+   23  kubectl get all
+   24  kubectl get pod two-59cc4584b9-zc4fg -o yaml | less
+   25  kubectl get deploy two -o yaml | less
+   26  kubectl api-resources
+   27  kubectl api-resources | less
+   28  history
+   29  kubectl get pods
+   30  kubectl get pods -A
+   31  history
+   32  kubectl run -h | less
+   33  kubectl run nginx --image=nginx
+   34  history
+   35  kubectl get all
+   36  kubectl delete pod one-79d786554f-gvvxl 
+   37  kubectl get all
+   38  kubectl delete pod nginx 
+   39  kubectl get all
+   40  kubectl scale deployment one --replicas=2
+   41  kubectl scale deployment one --replicas=0
+   42  kubectl get all
+   43  kubectl get deploy one -o yaml | less
+   44  kubectl get deploy two -o yaml | less
+   45  kubectl get all --selector app=two
+   46  kubectl create deploy three --image=nginx --replicas=2 --dry-run=client -o yaml
+   47  kubectl create deploy three --image=nginx --replicas=2 --dry-run=client -o yaml > three.yaml
+   48  kubectl apply -f three.yaml 
+   49  kubectl explain deploy.spec | less
+   50  vim three.yaml 
+   51  kubectl apply -f three.yaml 
+   52  history
+   53  cat three.yaml 
+   54  history
+   55  kubectl explain pod.spec | less
+   56  kubectl get ns
+   57  kubectl create ns secret
+   58  kubectl get ns
+   59  kubectl run four --image=nginx -n secret
+   60  kubectl get pods
+   61  kubectl get pods -n secret
+   62  kubectl get pods -n kube-system 
+   63  helm
+   64  sudo snap install helm --classic
+   65  helm install my-mariadb oci://registry-1.docker.io/cloudpirates/mariadb --version 0.15.3
+   66  kubectl get all
+   67  kubectl get pods
+   68  kubectl get pods -A
+   69  kubectl create deploy mydb --image=mariadb --replicas=3
+   70  kubectl get all --selector app=mydb
+   71  kubectl describe pod mydb-7888d987c5-jm27m | less
+   72  kubectl logs mydb-7888d987c5-jm27m 
+   73  kubectl set env -h | less
+   74  kubectl set env deploy mydb MARIADB_ROOT_PASSWORD=password
+   75  kubectl get all --selector app=mydb
+   76  kubectl get deploy -o yaml | less
+   77  kubectl get deploy mydb -o yaml | less
+   78  history
+   79  kubectl get pods
+   80  kubectl exec -it three-784557db9f-drmhj -- sh
+   81  history
+   82  kubectl create deploy nginxsvc --image=nginx
+   83  kubectl get all --selector app=nginxsvc
+   84  kubectl scale deployment nginxsvc --replicas=3
+   85  kubectl get pods --selector app=nginxsvc -o wide
+   86  kubectl expose deployment nginxsvc --port=80
+   87  kubectl get svc
+   88  curl 10.100.96.19
+   89  minikube ip
+   90  kubectl get endpoints
+   91  kubectl describe svc nginxsvc 
+   92  minikube ssh
+   93  kubectl edit svc nginxsvc 
+   94  kubectl get svc
+   95  minikube ip
+   96  curl 192.168.49.2:31495
+   97  history
+   98  kubectl get svc
+   99  kubectl explain pod.spec.volumes | less
+  100  vim morevolumes.yaml 
+  101  kubectl apply -f morevolumes.yaml 
+  102  kubectl get pods
+  103  kubectl exec -it morevol -c centos1 -- touch /centos1/test
+  104  kubectl exec -it morevol -c centos2 -- ls -l /centos2
+  105  history
+  106  kubectl get sc
+  107  kubectl get pv,pvc
+  108  vim pvc.yaml 
+  109  kubectl apply -f pvc.yaml 
+  110  kubectl get pv,pvc
+  111  vim pv-pod.yaml 
+  112  kubectl apply -f pv-pod.yaml 
+  113  vim pv-pod.yaml 
+  114  kubectl exec -it pv-pod -- touch /usr/share/nginx/html/HELLO
+  115  kubectl describe pv pvc-dee5bbf4-7312-4e04-8c32-d5ce54615987 
+  116  minikube ssh
+  117  history
+  118  kubectl create cm mydbvars --from-literal=MARIADB_ROOT_PASSWORD=password
+  119  kubectl describe cm mydbvars 
+  120  kubectl set env --from=configmap/mydbvars deploy/mydb
+  121  kubectl get deploy mydb -o yaml | less
+  122  kubectl create secret -h | less
+  123  kubectl create secret generic mydbsecret --from-literal=MARIADB_ROOT_PASSWORD=password
+  124  kubectl describe secret mydbsecret 
+  125  kubectl get secret mydbsecret -o yaml
+  126  echo cGFzc3dvcmQ= | base64 -d
+  127  kubectl set env --from=configmap/mydbvars deploy/mydb
+  128  kubectl set env --from-secret/mydbsecret deploy/mydb
+  129  kubectl set env --from=secret/mydbsecret deploy/mydb
+  130  kubectl get deploy mydb -o yaml | less
+  131  cd
+  132  minikube addons list
+  133  minikube addons enable ingress
+  134  kubectl get ns
+  135  kubectl get all -n ingress-nginx 
+  136  kubectl create ing nginxsvc --rule="myapp.info/=nginxsvc:80"
+  137  kubectl describe ing nginxsvc 
+  138  sudo vim /etc/hosts
+  139  curl myapp.info
+  140  history
+  141  cd kubernetes/
+  142  ls
+  143  less resources.txt 
+  144  sudo apt install openssh-server
+  145  history > /tmp/march26.txt
