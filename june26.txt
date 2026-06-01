@@ -1,0 +1,173 @@
+    1  minikube start
+    2  kubectl get all
+    3  kubectl create deploy myweb --image=nginx --replicas=3
+    4  kubectl get all
+    5  history
+    6  exit
+    7  ping nu.nl
+    8  sudo apt install -y vim git
+    9  history
+   10  git clone https://github.com/sandervanvugt/kubernetes
+   11  cd kubernetes/
+   12  ls *sh
+   13  ./minikube-docker-setup.sh 
+   14  exit
+   15  minikube ssh
+   16  kubectl edit svc nginxsvc 
+   17  kubectl get svc
+   18  minikube ip
+   19  curl 192.168.49.2:31706
+   20  kubectl edit svc nginxsvc 
+   21  curl 192.168.49.2:31706
+   22  kubectl edit svc nginxsvc 
+   23  curl 192.168.49.2:31706
+   24  kubectl describe svc nginxsvc 
+   25  kubectl get endpoints
+   26  kubectl get pods --show-labels
+   27  kubectl edit svc nginxsvc 
+   28  curl 192.168.49.2:31706
+   29  history
+   30  exit
+   31  history
+   32  kubectl get all
+   33  kubectl completion -h | less
+   34  kubectl get pods myweb-64cb6d9f59-vp529 
+   35  kubectl create -h
+   36  kubectl create -h | less
+   37  kubectl create deploy -h | less
+   38  kubectl get all
+   39  kubectl get pods
+   40  kubectl get all
+   41  kubectl delete pod myweb-64cb6d9f59-vp529 
+   42  kubectl get all
+   43  kubectl run -h | less
+   44  kubectl get all
+   45  kubectl delete pod nginx 
+   46  kubectl get all
+   47  history
+   48  kubectl get all
+   49  kubectl scale deploy myweb --replicas 20
+   50  kubectl get all
+   51  kubectl scale deploy myweb --replicas 2
+   52  kubectl autoscale -h | less
+   53  kubectl autoscale deploy myweb --min=3 --max=5
+   54  kubectl get all
+   55  history
+   56  kubectl api-resources | less
+   57  kubectl get pods myweb-64cb6d9f59-wqvl7 -o yaml | less
+   58  kubectl explain pod.spec | less
+   59  kubectl create deploy newer --image=nginx:1.17 --replicas=10
+   60  kubectl get all
+   61  kubectl set -h | less
+   62  kubectl set image -h | less
+   63  kubectl get deploy
+   64  #kubectl set image deploy/newer --image=nginx:latest
+   65  kubectl set image -h | less
+   66  kubectl set image deploy/newer nginx=nginx:1.25
+   67  kubectl get all
+   68  history
+   69  kubectl get all --show-labels
+   70  kubectl get all --selector app=myweb
+   71  kubectl describe pod myweb-64cb6d9f59-wqvl7 | less
+   72  kubectl create deploy mynginx --image=nginx --dry-run=client -o yaml
+   73  kubectl create deploy mynginx --image=nginx --dry-run=client -o json
+   74  kubectl create deploy mynginx --image=nginx --dry-run=client -o yaml > mynginx.yaml
+   75  vim mynginx.yaml 
+   76  kubectl apply -f mynginx.yaml 
+   77  kubectl explain deploy.spec
+   78  vim mynginx.yaml 
+   79  kubectl apply -f mynginx.yaml 
+   80  kubectl get deploy mynginx -o yaml | less
+   81  history
+   82  git pull
+   83  ls
+   84  cat links 
+   85  cat resources.txt 
+   86  kubect get ns
+   87  kubectl get ns
+   88  kubectl get pods
+   89  kubectl get pods -A
+   90  kubectl get pods -n kube-system 
+   91  kubectl create ns secret
+   92  kubectl get ns
+   93  kubectl run secretpod --image=nginx -n secret
+   94  kubectl get pods
+   95  kubectl get pods -n secret
+   96  kubectl create deploy mydb --image=mariadb --replicas=3
+   97  kubectl get all --selector app=mydb
+   98  kubectl describe pod mydb-7888d987c5-xj924 
+   99  kubectl logs mydb-7888d987c5-xj924 
+  100  kubectl set env deploy/mydb MARIADB_ROOT_PASSWORD=secret
+  101  kubectl get all --selector app=mydb
+  102  history
+  103  kubectl create deploy nginxsvc --image=nginx
+  104  kubectl get all --selector app=nginxsvc
+  105  kubectl scale deploy nginxsvc --replicas=3
+  106  kubectl get all --selector app=nginxsvc -o wide
+  107  kubectl expose deploy nginxsvc --port=80
+  108  kubectl get all --selector app=nginxsvc -o wide
+  109  kubectl describe svc nginxsvc 
+  110  curl 10.99.60.231
+  111  minikube ssh
+  112  id
+  113  newgrp docker
+  114  exit
+  115  ./countdown 14
+  116  ./countdown 1
+  117  ./countdown 12
+  118  ./countdown 3
+  119  exit
+  120  minikube ssh
+  121  cat resources.txt 
+  122  kubectl create mynewdb --image=mariadb --replicas=3
+  123  kubectl create deploy mynewdb --image=mariadb --replicas=3
+  124  kubectl get all --selector app=mynewdv
+  125  kubectl get all --selector app=mynewdb
+  126  kubectl create cm mynewdbvars --from-literal=MARIADB_ROOT_PASSWORD=password
+  127  kubectl get cm mynewdbvars -o yaml
+  128  kubectl set env --from=configmap/mynewdbvars deploy/mynewdb
+  129  kubectl get deploy mynewdb -o yaml | less
+  130  kubectl get deploy mydb -o yaml | less
+  131  kubectl create secret generic mynewdbsecret --from-literal=MARIADB_ROOT_PASSWORD=password
+  132  kubectl get secrets mynewdbsecret -o yaml
+  133  echo cGFzc3dvcmQ= | base64 -d
+  134  '
+  135  kubectl set env --from=secret/mynewdbsecret deploy/mynewdb
+  136  kubectl get deploy mynewdb -o yaml | less
+  137  minikube addons list
+  138  minikube addons enable ingress
+  139  kubectl get pods -n ingress-nginx 
+  140  kubectl create ing nginxsvc --rule="myapp.info/=nginxsvc:80"
+  141  sudo vim /etc/hosts
+  142  curl myapp.info
+  143  minikube addons list
+  144  exit
+  145  history
+  146  kubectl get svc
+  147  sudo snap install helm --classic
+  148  helm version
+  149  kubectl explain pod.spec.volumes | less
+  150  cd kubernetes/
+  151  ls
+  152  vim morevolumes.yaml 
+  153  kubectl apply -f morevolumes.yaml 
+  154  kubectl describe pods morevol | less
+  155  kubectl exec -it morevol -c centos1 -- touch /centos1/test
+  156  kubectl exec -ti morevol -c centos2 -- ls -l /centos2
+  157  kubectl get pvc,pv,storageclass
+  158  cat pvc.yaml 
+  159  kubectl apply -f pvc.yaml 
+  160  kubectl get pvc,pv,storageclass
+  161  vim pv-pod.yaml 
+  162  kubectl apply -f pv-pod.yaml 
+  163  kubectl exec -it pv-pod -- touch /usr/share/nginx/html/hellofolk
+  164  kubectl describe pv pvc-c6d5e7f2-4df6-4b70-8d4a-ea4bc0837fcd 
+  165  minikube ssh
+  166  sudo minikube ssh
+  167  newgrp docker
+  168  exit
+  169  cd kubernetes/
+  170  ./countdown 12
+  171  exit
+  172  sudo apt install openssh-server
+  173  history > /tmp/june26.txt
